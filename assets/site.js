@@ -20,6 +20,15 @@
     if (b) apply(b.getAttribute('data-set-lang'), true);
   });
 
+  // pandoc --katex output (the orientaciones page): bare TeX in span.math
+  if (window.katex) {
+    var ms = document.querySelectorAll('span.math.inline, span.math.display');
+    for (var k = 0; k < ms.length; k++) {
+      try {
+        window.katex.render(ms[k].textContent, ms[k], { displayMode: ms[k].classList.contains('display'), throwOnError: false });
+      } catch (e) {}
+    }
+  }
   if (window.renderMathInElement) {
     try {
       window.renderMathInElement(document.body, {
