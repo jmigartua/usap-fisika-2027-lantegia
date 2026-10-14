@@ -171,7 +171,11 @@ details.orig[open] summary::before { content: "− "; }
 details.orig[open] { display: grid; gap: 10px; }
 details.orig .stmt { color: var(--soft); }
 
-.site-ft { border-top: 1px solid var(--line); padding-block: 22px 40px; font-size: 13.5px; color: var(--faint); }
+.site-ft { border-top: 1px solid var(--line); padding-block: 22px 40px; font-size: 13.5px; color: var(--faint); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.ft-deck { color: var(--soft); text-decoration: none; white-space: nowrap; }
+.ft-deck:hover { color: var(--ink); text-decoration: underline; }
+.deck-note { border: 1px solid var(--line); padding: 18px 20px; gap: 10px !important; max-width: 760px; background: var(--tint); }
+.deck-note p { color: var(--soft); }
 
 @media (max-width: 860px) {
   .ptable { grid-template-columns: 1fr 1fr; }
